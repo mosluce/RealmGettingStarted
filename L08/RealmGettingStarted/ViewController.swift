@@ -28,6 +28,8 @@ class ViewController: UIViewController {
         self.navigationItem.title = "TODOs"
         
         self.realm = try! Realm()
+        print(realm.configuration.fileURL)
+        
         self.selectState(0)
 //        self.items = realm.objects(TodoItem.self).sorted(byKeyPath: "created", ascending: false)
 //        self.notificationToken = self.items.observe {[weak self] (changes) in
@@ -55,7 +57,7 @@ class ViewController: UIViewController {
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "TodoItemCell")
+        self.tableView.registerNib(TodoItemCell.self)
         
         self.titleField.addTarget(self, action: #selector(didTitleFieldChange), for: .editingChanged)
         self.addButton.addTarget(self, action: #selector(addItem), for: .touchUpInside)
@@ -138,22 +140,21 @@ class ViewController: UIViewController {
 
 extension ViewController : UITableViewDataSource, UITableViewDelegate {
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TodoItemCell", for: indexPath)
+        let cell: TodoItemCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
         let item = items[indexPath.row]
         
         cell.selectionStyle = .none
-        
-        if item.isDone {
-            cell.textLabel?.text = "✔︎ \(item.title)"
-        } else {
-            cell.textLabel?.text = "\(item.title)"
-        }
+        cell.item = item
         
         return cell
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

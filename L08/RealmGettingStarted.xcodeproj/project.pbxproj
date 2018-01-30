@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		442D3BED2020639600507161 /* TodoItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442D3BEB2020639600507161 /* TodoItemCell.swift */; };
+		442D3BEE2020639600507161 /* TodoItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 442D3BEC2020639600507161 /* TodoItemCell.xib */; };
+		442D3BF02020667800507161 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442D3BEF2020667800507161 /* TableView.swift */; };
 		4439D9382020375100674E31 /* TodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4439D9372020375100674E31 /* TodoItem.swift */; };
 		447303F72020222D002F72DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447303F62020222D002F72DB /* AppDelegate.swift */; };
 		447303F92020222D002F72DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447303F82020222D002F72DB /* ViewController.swift */; };
@@ -17,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		442D3BEB2020639600507161 /* TodoItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItemCell.swift; sourceTree = "<group>"; };
+		442D3BEC2020639600507161 /* TodoItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodoItemCell.xib; sourceTree = "<group>"; };
+		442D3BEF2020667800507161 /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
 		4439D9372020375100674E31 /* TodoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItem.swift; sourceTree = "<group>"; };
 		447303F32020222D002F72DB /* RealmGettingStarted.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RealmGettingStarted.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		447303F62020222D002F72DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +84,9 @@
 				447303FD2020222D002F72DB /* Assets.xcassets */,
 				447303FF2020222D002F72DB /* LaunchScreen.storyboard */,
 				447304022020222D002F72DB /* Info.plist */,
+				442D3BEB2020639600507161 /* TodoItemCell.swift */,
+				442D3BEC2020639600507161 /* TodoItemCell.xib */,
+				442D3BEF2020667800507161 /* TableView.swift */,
 			);
 			path = RealmGettingStarted;
 			sourceTree = "<group>";
@@ -155,6 +164,7 @@
 			files = (
 				447304012020222D002F72DB /* LaunchScreen.storyboard in Resources */,
 				447303FE2020222D002F72DB /* Assets.xcassets in Resources */,
+				442D3BEE2020639600507161 /* TodoItemCell.xib in Resources */,
 				447303FC2020222D002F72DB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -223,7 +233,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				447303F92020222D002F72DB /* ViewController.swift in Sources */,
+				442D3BF02020667800507161 /* TableView.swift in Sources */,
 				4439D9382020375100674E31 /* TodoItem.swift in Sources */,
+				442D3BED2020639600507161 /* TodoItemCell.swift in Sources */,
 				447303F72020222D002F72DB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
