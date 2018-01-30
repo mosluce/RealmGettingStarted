@@ -60,6 +60,10 @@ class ViewController: UIViewController {
         
         self.addButton.isEnabled = false
     }
+    
+    deinit {
+        notificationToken?.invalidate()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
