@@ -35,8 +35,14 @@ class ViewController: UIViewController {
             case .initial:
                 // Results are now populated and can be accessed without blocking the UI
                 tableView.reloadData()
-            case .update(_, let deletions, let insertions, let modifications):
+            case .update(let t, let deletions, let insertions, let modifications):
                 // Query results have changed, so apply them to the UITableView
+//                print(type(of: t))
+//                print(t.count)
+//
+//                self?.items = t
+//                self?.tableView.reloadData()
+                
                 tableView.beginUpdates()
                 tableView.insertRows(at: insertions.map({ IndexPath(row: $0, section: 0) }),
                                      with: .automatic)
@@ -87,7 +93,7 @@ class ViewController: UIViewController {
 //        self.tableView.beginUpdates()
 //        self.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
 //        self.tableView.endUpdates()
-//        self.titleField.text = ""
+        self.titleField.text = ""
     }
 }
 

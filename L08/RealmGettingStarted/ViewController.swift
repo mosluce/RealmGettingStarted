@@ -28,7 +28,7 @@ class ViewController: UIViewController {
         self.navigationItem.title = "TODOs"
         
         self.realm = try! Realm()
-        print(realm.configuration.fileURL)
+        print(realm.configuration.fileURL!)
         
         self.selectState(0)
 //        self.items = realm.objects(TodoItem.self).sorted(byKeyPath: "created", ascending: false)
@@ -134,7 +134,7 @@ class ViewController: UIViewController {
 //        self.tableView.beginUpdates()
 //        self.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
 //        self.tableView.endUpdates()
-//        self.titleField.text = ""
+        self.titleField.text = ""
     }
 }
 

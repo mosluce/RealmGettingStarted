@@ -11,11 +11,6 @@ import RealmSwift
 
 class TodoItem: Object {
     @objc dynamic var title: String = ""
-    @objc dynamic public var created: Date = Date()
-    @objc dynamic public var isDone: Bool = false
-    
-    convenience init(title: String) {
-        self.init()
-        self.title = title
-    }
+    @objc dynamic var created: Date = Date()
+    @objc dynamic var isDone: Bool = false
 }
