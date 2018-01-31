@@ -120,7 +120,8 @@ class ViewController: UIViewController {
                 let df = DateFormatter()
                 df.dateFormat = "mm:ss"
                 
-                let todo = TodoItem(title: df.string(from: Date()))
+                let todo = TodoItem()
+                todo.title = df.string(from: Date())
                 
                 realm.add(todo)
                 
@@ -178,7 +179,8 @@ class ViewController: UIViewController {
         let df = DateFormatter()
         df.dateFormat = "mm:ss"
         
-        let todo = TodoItem(title: df.string(from: Date()))
+        let todo = TodoItem()
+        todo.title = df.string(from: Date())
         
         realm.add(todo)
         
@@ -192,9 +194,9 @@ class ViewController: UIViewController {
         let idx = arc4random_uniform(UInt32(count - 1))
         let todo = todos[Int(idx)]
 
-        todo.title = "1234"
-        todo.created = Date()
-//            realm.delete(todo)
+//        todo.title = "1234"
+//        todo.created = Date()
+        realm.delete(todo)
         
         self.logView.text = "delete at \(Date()) : \(todo.title)\n" + self.logView.text
     }
@@ -206,11 +208,6 @@ class TodoItem: Object {
     @objc dynamic var title: String = "(Empty)"
     @objc dynamic var created: Date = Date()
     @objc dynamic var isDone: Bool = false
-    
-    convenience init(title: String) {
-        self.init()
-        self.title = title
-    }
     
     override static func primaryKey() -> String? {
         return "id"
@@ -266,3 +263,4 @@ class MLAutolayout {
         return self
     }
 }
+
